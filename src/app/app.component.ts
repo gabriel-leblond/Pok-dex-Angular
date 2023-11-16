@@ -1,18 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { POKEMONS } from './mock-pokemon-list';
+import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: 'app.component.html',
   styles: [],
 })
-export class AppComponent {
-  title = 'ng-pokemon-app';
+export class AppComponent implements OnInit{
+  pokemonsList: Pokemon[] = POKEMONS;
+
+  ngOnInit(): void {
+
+    console.log(this.pokemonsList);
+
+  }
+
+  selectPokemon(event: MouseEvent){
+    const index: number = +(event.target as HTMLInputElement).value;
+    console.log(`Tu as clicker sur ${this.pokemonsList[index].name}`)
+  }
 }
