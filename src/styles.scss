@@ -1,4 +1,118 @@
 /* You can add global styles to this file, and also import other style files */
+
+$color-primary: rgb(253, 75, 75);
+$color-light-grey: rgb(237, 237, 237);
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body{
-  background-color: rgb(206, 244, 231);
+  margin: 0;
+  padding: 0;
+  background-color: $color-light-grey;
+  font-family: 'Poppins', sans-serif;
+}
+
+// header{
+//   margin: 0;
+//   padding: 16px;
+//   background-color: $color-primary;
+
+//   h1{
+//     margin: 0;
+//     padding: 0;
+//     // font-family: 'Kdam Thmor Pro', sans-serif;
+//     color: white;
+//   }
+// }
+
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.search-box{
+  width: 70%;
+  border-radius: 16px;
+  background-color: white;
+  margin-top: 32px;
+  display: flex;
+
+
+  .logo-box{
+    background-color: $color-primary;
+    color: white;
+    border-radius: 16px 0 0 16px;
+
+    h1{
+      padding: 0 64px;
+    }
+  }
+
+  input{
+    width: 70%;
+    text-align: center;
+    font-size: 22px;
+    border: none;
+
+    &:focus{
+      border: none;
+      outline: none;
+      border-bottom: 2px solid $color-light-grey;
+    }
+  }
+}
+
+.result-box{
+  width: 70%;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.p-16-box{
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pokemon-grid{
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
+
+
+  .pokemon-card{
+    // outline: solid 2px red;
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    position: relative;
+    border: solid 6px rgb(229, 229, 229);
+
+    .pokemon-pv{
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      font-size: 12px;
+        span{
+          font-weight: bold;
+        }
+    }
+
+    img{
+      width: 100%;
+    }
+
+    h3{
+      font-size: 24px;
+      margin: 0 0 8px 0;
+    }
+
+  }
 }

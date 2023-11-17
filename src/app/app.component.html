@@ -1,10 +1,49 @@
-<h1>Liste de Poffffkémon</h1>
-<input
-  #input
-  type="text"
-  (keyup)="0"
-/>
-<p>{{input.value}}</p>
-<p>{{pokemonsList[0].name}}</p>
-<p>{{pokemonsList[1].name}}</p>
-<p>{{pokemonsList[2].name}}</p>
+
+<main>
+
+
+  <div class="search-box">
+    <div class="logo-box">
+      <h1> Pokédex</h1>
+    </div>
+    <div class="p-16-box">
+      <input
+      #input
+      type="number"
+      (keyup.enter)="selectPokemon(input.value)"
+      placeholder="Rechercher un Pokémon"
+      />
+    </div>
+  </div>
+
+  <div class="result-box">
+    <div class="p-16-box">
+      <p *ngIf="pokemonSelected">
+        Vous avez selectionné : {{pokemonSelected.name}}
+      </p>
+      <p *ngIf="!pokemonSelected">
+        Aucun pokémon correspondant
+      </p>
+      </div>
+  </div>
+
+  <div class="pokemon-grid">
+
+    <div *ngFor="let pokemon of pokemonsList" class="pokemon-card" appBorderCard>
+
+      <span class="pokemon-pv"><span>{{pokemon.hp}}</span> PV</span>
+
+      <img src="{{pokemon.picture}}" alt="illustration de {{pokemon.name}}"/>
+
+      <h3>{{pokemon.name}}</h3>
+
+
+
+
+      {{pokemon.types}}
+
+
+    </div>
+  </div>
+
+</main>
