@@ -7,19 +7,21 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class BorderCardDirective {
 
   constructor(private el: ElementRef) {
-    this.setBorder('#f5f5f5');
+    this.setBorder('#e5e5e5');
    }
 
   @HostListener('mouseenter') onMouseEnter(){
-    this.setBorder('#009688');
+    this.setBorder('#fd4b4b');
+    console.log('survol');
   }
 
   @HostListener('mouseleave') onMouseLeave(){
-    this.setBorder('#f5f5f5');
+    this.setBorder('#e5e5e5');
+    console.log('sortie');
   }
 
   setBorder(color: string) {
-    this.el.nativeElement.style.outline = `solid 4px red ${color}`
+    this.el.nativeElement.style.border = `solid 6px ${color}`
   }
 
 
