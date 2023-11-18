@@ -31,30 +31,6 @@
   <router-outlet></router-outlet>
 
 
-  <div class="pokemon-grid">
 
-    <div *ngFor="let pokemon of pokemonsList" class="pokemon-card" appBorderCard>
-
-      <span class="pokemon-pv"><span>{{pokemon.hp}}</span> PV</span>
-
-      <img src="{{pokemon.picture}}" alt="illustration de {{pokemon.name}}"/>
-
-      <h3>{{pokemon.name}}</h3>
-
-      <div class="type-box">
-        <span
-          *ngFor="let type of pokemon.types"
-          style="{{type | pokemonTypeColor}}"
-        >
-          {{type}}
-        </span>
-      </div>
-
-
-      <!-- {{pokemon.types}} -->
-
-
-    </div>
-  </div>
 
 </main>
