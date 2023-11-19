@@ -4,6 +4,25 @@
 
 <div class="pokemon-show-box">
   <div class="p-16-box">
+    <img src="{{pokemon?.picture}}" alt="illustration de {{pokemon?.name}}"/>
 
+    <div class="info-box">
+      <h1>{{pokemon?.name}}</h1>
+      <p> PV : {{pokemon?.hp}}</p>
+
+      <p> Types :
+        <span
+        *ngFor="let type of pokemon?.types"
+        style="{{type | pokemonTypeColor}}"
+      >
+        {{type}}
+      </span>
+
+      </p>
+    </div>
+  </div>
+  <div class="edit-box">
+    <a href="#">S</a>
+    <a href="#">M</a>
   </div>
 </div>

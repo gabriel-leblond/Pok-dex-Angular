@@ -12,12 +12,12 @@ export class BorderCardDirective {
 
   @HostListener('mouseenter') onMouseEnter(){
     this.setBorder('#fd4b4b');
-    console.log('survol');
+    // console.log('survol');
   }
 
   @HostListener('mouseleave') onMouseLeave(){
     this.setBorder('#e5e5e5');
-    console.log('sortie');
+    // console.log('sortie');
   }
 
   setBorder(color: string) {

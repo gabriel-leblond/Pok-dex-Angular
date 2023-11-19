@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from "@angular/router";
 import { Pokemon } from "../pokemon";
 import { POKEMONS } from '../mock-pokemon-list';
+import { PokemonTypeColorPipe } from "../pokemon-type-color.pipe";
 
 @Component({
   selector: 'app-pokemon-show',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PokemonTypeColorPipe],
   templateUrl: './pokemon-show.component.html',
   styles: ``
 })

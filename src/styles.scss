@@ -166,9 +166,54 @@ app-pokemon-show{
   }
 
   .pokemon-show-box{
-    background-color: white;
-    border-radius: 16px;
-    width: 70%;
+    margin-bottom: 64px;
+    position: relative;
+
+    .p-16-box{
+      display: flex;
+      gap: 32px;
+      background-color: white;
+      border-radius: 16px;
+
+      .info-box{
+
+        h1{
+
+        }
+
+        span{
+          padding: 0 16px;
+          border-radius: 16px;
+          background-color: red;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    .edit-box{
+      position: absolute;
+      top: 0px;
+      right: -60px;
+      // outline: solid red 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+
+      a{
+        text-decoration: none;
+        color: $color-primary;
+        cursor: pointer;
+        background-color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+      }
+    }
+
   }
 
 }
