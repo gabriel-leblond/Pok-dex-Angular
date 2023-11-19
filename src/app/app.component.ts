@@ -18,6 +18,7 @@ import { PokemonShowComponent } from "./pokemon-show/pokemon-show.component";
 export class AppComponent implements OnInit{
   pokemonsList: Pokemon[] = POKEMONS;
   pokemonSelected: Pokemon|undefined;
+  searchBoxSwitch: Boolean = false;
 
   ngOnInit(): void {
 
@@ -29,9 +30,11 @@ export class AppComponent implements OnInit{
     const pokemon: Pokemon|undefined = this.pokemonsList.find( pokemon => pokemon.id == +pokemonId )
 
     if (pokemon) {
+      this.searchBoxSwitch = true;
       this.pokemonSelected = pokemon;
       console.log(`Tu as demander  ${pokemon.name}`);
     } else {
+      this.searchBoxSwitch = true;
       this.pokemonSelected = pokemon;
       console.log(`Le pokemon n'existe pas`)
     }

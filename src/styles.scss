@@ -1,16 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
-$color-primary: rgb(253, 75, 75);
-$color-light-grey: rgb(237, 237, 237);
+
+// ------------------------------------------------------------------- IMPORTS
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-// ------------------------------- PIPE
+
+
+// ------------------------------------------------------------------- VAR
+
+$color-primary: rgb(253, 75, 75);
+$color-light-grey: rgb(237, 237, 237);
+
+
+// ------------------------------------------------------------------- GENERIC
+.p-16-box{
+  padding: 16px;
+}
 
 
 
-
-// -------------------------------
+// ------------------------------------------------------------------- TEMPLATE
 
 body{
   margin: 0;
@@ -18,20 +28,6 @@ body{
   background-color: $color-light-grey;
   font-family: 'Poppins', sans-serif;
 }
-
-// header{
-//   margin: 0;
-//   padding: 16px;
-//   background-color: $color-primary;
-
-//   h1{
-//     margin: 0;
-//     padding: 0;
-//     // font-family: 'Kdam Thmor Pro', sans-serif;
-//     color: white;
-//   }
-// }
-
 
 main{
   display: flex;
@@ -56,18 +52,29 @@ main{
     h1{
       padding: 0 64px;
     }
+
+    a{
+      text-decoration: none;
+      color: white;
+    }
   }
 
-  input{
+  .p-16-box{
     width: 70%;
-    text-align: center;
-    font-size: 22px;
-    border: none;
+    display: flex;
+    align-items: center;
 
-    &:focus{
+    input{
+      width: 100%;
+      // text-align: center;
+      font-size: 22px;
       border: none;
-      outline: none;
-      border-bottom: 2px solid $color-light-grey;
+
+      &:focus{
+        border: none;
+        outline: none;
+        border-bottom: 2px solid $color-light-grey;
+      }
     }
   }
 }
@@ -78,13 +85,8 @@ main{
   background-color: white;
 }
 
-.p-16-box{
-  padding: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
+
+// ------------------------------------------------------------------- LIST
 
 app-pokemon-list{
   // outline: 4px solid red;
@@ -140,4 +142,33 @@ app-pokemon-list{
     }
 
   }
+}
+
+// ------------------------------------------------------------------- SHOW
+
+
+app-pokemon-show{
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  .links-box{
+    width: 70%;
+
+    a{
+      text-decoration: none;
+      font-weight: bold;
+      color: $color-primary;
+    }
+  }
+
+  .pokemon-show-box{
+    background-color: white;
+    border-radius: 16px;
+    width: 70%;
+  }
+
 }
