@@ -1,6 +1,6 @@
 <div class="pokemon-grid">
 
-  <div *ngFor="let pokemon of pokemonsList" class="pokemon-card" appBorderCard>
+  <div (click)="gotoPokemon(pokemon)" *ngFor="let pokemon of pokemonsList" class="pokemon-card" appBorderCard>
 
     <span class="pokemon-pv"><span>{{pokemon.hp}}</span> PV</span>
 
